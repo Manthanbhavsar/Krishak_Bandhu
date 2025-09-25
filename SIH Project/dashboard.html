@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishi Bandhu · Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <header class="kb-header">
+      <div class="kb-container">
+        <div class="brand">
+          <span class="leaf">🌱</span>
+          <span class="name">Krishi Bandhu</span>
+        </div>
+        <nav class="nav">
+          <button class="tab-btn active" data-tab="home">Home</button>
+          <button class="tab-btn" data-tab="weather">Weather</button>
+          <button class="tab-btn" data-tab="soil">Soil Diagnosis</button>
+          <button class="tab-btn" data-tab="resources">Resources</button>
+        </nav>
+        <div class="user">
+          <span id="welcomeUser">👤</span>
+          <button id="logout" class="btn btn-ghost sm">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="kb-container main">
+      <section id="tab-home" class="tab active">
+        <div class="grid">
+          <div class="card hero">
+            <h1>Namaste, <span id="userName">Farmer</span> 👋</h1>
+            <p>Grow smarter with tailored crop advice, weather updates and soil health tips.</p>
+            <div class="actions">
+              <button class="btn btn-primary" data-tab-jump="soil">Run Soil Check</button>
+              <button class="btn btn-ghost" data-tab-jump="weather">View Weather</button>
+            </div>
+          </div>
+          <div class="card kpis">
+            <div class="kpi">
+              <span class="kpi-label">Todays Rain Chance</span>
+              <span id="kpiRain" class="kpi-value">--%</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-label">Ideal Crop</span>
+              <span id="kpiCrop" class="kpi-value">--</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi-label">Soil Health</span>
+              <span id="kpiSoil" class="kpi-value">--</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-weather" class="tab">
+        <div class="card">
+          <h2>Weather</h2>
+          <p class="muted">Plan sowing, irrigation, and spraying with 7-day outlook, rain chance, and temperature trends. This demo uses a mock forecast without external APIs.</p>
+          <div class="row">
+            <input id="locInput" class="input" placeholder="Enter your village / city" />
+            <button id="getWeather" class="btn btn-primary">Get Forecast</button>
+          </div>
+          <div id="weatherResult" class="weather-grid"></div>
+        </div>
+      </section>
+
+      <section id="tab-soil" class="tab">
+        <div class="card">
+          <h2>Soil Diagnosis</h2>
+          <p class="muted">Enter simple parameters like pH, moisture, and NPK to estimate soil health and receive fertilizer and irrigation recommendations.</p>
+          <div class="grid two">
+            <div class="stack">
+              <label class="label">pH</label>
+              <input id="ph" class="input" type="number" step="0.1" placeholder="6.5" />
+            </div>
+            <div class="stack">
+              <label class="label">Moisture (%)</label>
+              <input id="moisture" class="input" type="number" step="1" placeholder="40" />
+            </div>
+            <div class="stack">
+              <label class="label">Nitrogen (N)</label>
+              <input id="n" class="input" type="number" step="1" placeholder="50" />
+            </div>
+            <div class="stack">
+              <label class="label">Phosphorus (P)</label>
+              <input id="p" class="input" type="number" step="1" placeholder="40" />
+            </div>
+            <div class="stack">
+              <label class="label">Potassium (K)</label>
+              <input id="k" class="input" type="number" step="1" placeholder="50" />
+            </div>
+          </div>
+          <div class="row">
+            <button id="diagnose" class="btn btn-primary">Get Advisory</button>
+          </div>
+          <div id="soilAdvice" class="advice"></div>
+        </div>
+      </section>
+
+      <section id="tab-resources" class="tab">
+        <div class="card">
+          <h2>Resources</h2>
+          <div class="resources">
+            <a class="resource" href="#" onclick="return false;">
+              <span>Best sowing calendar for cereals</span>
+              <em>PDF</em>
+            </a>
+            <a class="resource" href="#" onclick="return false;">
+              <span>Integrated pest management guide</span>
+              <em>Article</em>
+            </a>
+            <a class="resource" href="#" onclick="return false;">
+              <span>Fertilizer dosage calculator (offline)</span>
+              <em>Tool</em>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+  </body>
+  </html>
+
+

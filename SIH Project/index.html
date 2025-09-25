@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishi Bandhu · Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="kb-header">
+      <div class="kb-container">
+        <div class="brand">
+          <span class="leaf">🌱</span>
+          <span class="name">Krishi Bandhu</span>
+        </div>
+        <nav class="nav">
+          <a class="nav-link" data-nav="home" href="#home">Home</a>
+          <a class="nav-link active" data-nav="login" href="#login">Login</a>
+          <a class="nav-link" href="dashboard.html#tab-weather">Weather</a>
+          <a class="nav-link" href="dashboard.html#tab-soil">Soil Diagnosis</a>
+          <a class="nav-link" href="dashboard.html#tab-resources">Resources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+      </div>
+
+      <section id="home" class="section">
+        <div class="kb-container">
+          <div class="content-card">
+            <h1 class="title">Smart Crop Advisory System</h1>
+            <p class="subtitle">For Small and Marginal Farmers — get local weather insights, quick soil checks, pest & disease tips, government schemes, and AI-guided recommendations to grow more with less.</p>
+
+            <div class="feature-scroller" id="featureScroller">
+              <button class="feature" data-key="remedies" data-free="true"><span class="img">🧪</span><span class="name">Customer remedies</span></button>
+              <button class="feature" data-key="community" data-free="true"><span class="img">👨‍🌾</span><span class="name">Farmers community</span></button>
+              <button class="feature" data-key="schemes"><span class="img">🏛️</span><span class="name">Government Scheme</span></button>
+              <button class="feature" data-key="soil-detect"><span class="img">🧪</span><span class="name">Soil detect</span></button>
+              <button class="feature" data-key="weather-alerts"><span class="img">🌦️</span><span class="name">Weather alerts</span></button>
+              <button class="feature" data-key="optimize-ai"><span class="img">🤖</span><span class="name">Optimize Solution using AI</span></button>
+              <button class="feature" data-key="market-price"><span class="img">💹</span><span class="name">Market Price</span></button>
+              <button class="feature" data-key="ai-disease"><span class="img">🦠</span><span class="name">AI disease Detection</span></button>
+              <button class="feature" data-key="crop-guide"><span class="img">🌾</span><span class="name">Crop Guide</span></button>
+            </div>
+
+            <div class="about">
+              <h3>Why Krishi Bandhu?</h3>
+              <ul>
+                <li>Localized, easy-to-understand advice for your farm conditions.</li>
+                <li>Focus on affordability and offline-first tips when networks are weak.</li>
+                <li>Community-powered knowledge sharing with government-backed resources.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="login" class="section active">
+        <div class="kb-container center">
+          <section class="login-card">
+            <h1 class="title">Welcome Back</h1>
+            <p class="subtitle">Smart Crop Advisory System for Small and Marginal Farmers</p>
+            <form id="loginForm" class="form">
+              <label class="label" for="username">Username</label>
+              <div class="input-wrap">
+                <input class="input" id="username" name="username" type="text" placeholder="Enter your username" autocomplete="username" required />
+              </div>
+              <label class="label" for="password">Password</label>
+              <div class="input-wrap">
+                <input class="input" id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+              </div>
+              <button class="btn btn-primary" type="submit">Login</button>
+              <button id="openRegister" class="btn btn-ghost" type="button">Registration</button>
+            </form>
+            <div id="loginHint" class="hint">Tip: You can use any username/password to preview the dashboard.</div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="registerTitle">
+      <div class="modal-dialog">
+        <button id="closeRegister" class="modal-close" aria-label="Close">✕</button>
+        <h2 id="registerTitle" class="modal-title">Create your account</h2>
+        <form id="registerForm" class="form">
+          <label class="label" for="regName">Full Name</label>
+          <div class="input-wrap">
+            <input class="input" id="regName" name="regName" type="text" placeholder="e.g., Ramesh Kumar" required />
+          </div>
+
+          <label class="label" for="regEmail">Email</label>
+          <div class="input-wrap">
+            <input class="input" id="regEmail" name="regEmail" type="email" placeholder="name@example.com" required />
+          </div>
+
+          <label class="label" for="regPassword">Password</label>
+          <div class="input-wrap">
+            <input class="input" id="regPassword" name="regPassword" type="password" placeholder="Create a password" required />
+          </div>
+
+          <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="kb-footer">
+      <div class="kb-container">
+        <span>© <span id="year"></span> Krishi Bandhu</span>
+        <span class="sep">•</span>
+        <span>Made with care for farmers 🌾</span>
+      </div>
+    </footer>
+
+    <div id="featureModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="featureTitle">
+      <div class="modal-dialog">
+        <button class="modal-close" id="closeFeature" aria-label="Close">✕</button>
+        <h2 id="featureTitle" class="modal-title">Feature</h2>
+        <div id="featureBody" class="feature-body"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
